@@ -1,0 +1,3 @@
+#!/bin/bash
+chown -h vinent:staff _hello
+
