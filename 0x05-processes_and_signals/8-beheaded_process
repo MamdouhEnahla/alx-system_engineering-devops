@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Start the 7-highlander process
+./7-highlander &
+
+# Get the PGID of the 7-highlander process
+pgid=$(ps -o pgid= -p $!)
+
+# Terminate the process group
+kill -- -$pgid
