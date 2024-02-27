@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Start the 4-to_infinity_and_beyond process
+./4-to_infinity_and_beyond &
+
+# Suspend the process (Ctrl-Z)
+fg
+
+# Terminate the suspended process
+kill %%

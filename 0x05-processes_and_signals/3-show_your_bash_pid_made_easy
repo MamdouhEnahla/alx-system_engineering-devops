@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Get a list of all running processes
+process_list=$(pgrep bash)
+
+# Iterate through each process
+for pid in $process_list; do
+    # Get the process name using /proc filesystem
+    process_name=$(cat "/proc/$pid/comm")
+    echo "PID: $pid, Process Name: $process_name"
+done
+
