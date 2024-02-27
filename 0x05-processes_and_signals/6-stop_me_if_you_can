@@ -6,4 +6,4 @@
 fg
 
 # Terminate the suspended process
-kill %%
+exit(0)

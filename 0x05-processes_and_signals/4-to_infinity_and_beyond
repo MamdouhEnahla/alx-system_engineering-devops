@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # Initialize a counter
-counter=0
-
 # Infinite loop
 while true; do
     echo "To infinity and beyond"

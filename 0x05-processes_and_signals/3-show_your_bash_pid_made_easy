@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Get a list of all running processes
 process_list=$(pgrep bash)
 

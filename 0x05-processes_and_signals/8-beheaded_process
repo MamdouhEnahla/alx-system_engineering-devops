@@ -6,4 +6,4 @@
 pgid=$(ps -o pgid= -p $!)
 
 # Terminate the process group
-kill -- -$pgid
+kill -- -"$pgid"
