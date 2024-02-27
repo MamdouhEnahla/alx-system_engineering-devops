@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Start the 4-to_infinity_and_beyond process
-./4-to_infinity_and_beyond &
+./7-highlander &
 
 # Suspend the process (Ctrl-Z)
 fg
