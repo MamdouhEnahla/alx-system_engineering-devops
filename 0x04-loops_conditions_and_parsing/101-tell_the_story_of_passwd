@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Set the path to the passwd file
+passwd_file="/etc/passwd"
+
+# Read each line from the passwd file
+while IFS=: read -r user pass uid gid desc home shell; do
+    # Skip comments and empty lines
+    if [[ "$user" = "#"* || -z "$user" ]]; then
+        continue
+    fi
+
+    # Print user details
+    echo "The user $user is part of the group $gid gang,"
+    echo "lives in $home, and rides $shell."
+    echo "USER ID's place is protected by the passcode $pass."
+    echo "More info about the user here: USER ID INFO"
+    echo
+done < "$passwd_file"
