@@ -8,6 +8,6 @@ fi
 
 # Get the IP address from the argument
 ip_address="$1"
-
-# Ping the IP address 5 times
-ping -c 5 "$ip_address"
+# Configure /etc/hosts to set localhost to 127.0.0.2 and facebook.com to 8.8.8.8
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
