@@ -1,0 +1,4 @@
+#!/bin/bash
+#Bash script that listens on port 98 on localhost
+# Listen on port 98 on localhost
+nc -l -p 9898
