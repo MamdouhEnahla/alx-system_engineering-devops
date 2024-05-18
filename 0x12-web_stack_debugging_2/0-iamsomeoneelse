@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ $# -eq 0 ]; then
+    # If no user is passed, execute as root
+    whoami
+else
+    # Get the username from the argument
+    target_user="$1"
+
+    # Verify if the user exists
+    if id "$target_user" &>/dev/null; then
+        sudo -u "$target_user" whoami
+    fi
+fi
