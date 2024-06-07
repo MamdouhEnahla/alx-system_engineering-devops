@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 
-"""Gets top 10 most host posts of a subreddit using reddit api."""
+"""Gets top 10 most hot posts of a subreddit using reddit api."""
 import requests
 
 
 def top_ten(subreddit):
-    """Gets top 10 most host posts of a subreddit using reddit api."""
-    headers = {'User-Agent': 'alxAPI'}
+    """Gets top 10 most hot posts of a subreddit using reddit api."""
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
+    headers = {"User-Agent": "Reddit Post Fetcher"}
+    response = requests.get(url, headers=headers)
+    data = response.json()
 
-    res = requests.get('https://www.reddit.com/r/{}/hot.json?limit=10'
-                       .format(subreddit),
-                       headers=headers, allow_redirects=False)
-
-    if res.status_code == 200:
-        posts = res.json().get('data').get('children')
-        for post in posts[0: 10]:
-            print(post.get('data').get('title'))
+    if response.status_code == 200:
+        posts = data['data']['children']
+        for post in posts:
+            print(post['data']['title'])
     else:
         return None

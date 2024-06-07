@@ -6,9 +6,10 @@ import requests
 
 def number_of_subscribers(subreddit):
     """returns the number of subscribers"""
-    headers = {'User-Agent': 'alxAPI'}
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'Reddit Subscriber Fetcher'}
     res = requests.get(
-        'https://www.reddit.com/r/{}/about.json'.format(subreddit),
+        url,
         headers=headers,
         allow_redirects=False
     )
